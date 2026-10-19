@@ -56,7 +56,6 @@ export default async function PlayerPage({ params }: ProfileProps) {
             )}
           </figure>
           <div>
-            <p className="kicker">First team</p>
             <h1 className="section-title">{player.name}</h1>
             {player.bio ? <p className="profile-bio">{player.bio}</p> : null}
             {details.length > 0 ? (
@@ -69,10 +68,7 @@ export default async function PlayerPage({ params }: ProfileProps) {
                 ))}
               </dl>
             ) : (
-              <p className="empty-note">
-                <strong>Portrait only, for now.</strong>
-                <p>Position, number, and match figures will be added when the club confirms them.</p>
-              </p>
+              <p className="empty-note">TODO: no confirmed position or number.</p>
             )}
             <p className="profile-back">
               <Link href="/team">Back to the squad</Link>

@@ -1097,7 +1097,7 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   .honour-place { padding-bottom: 0; }
   .contact { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; }
   .roster-cards { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr; gap: 1.75rem; }
+  .gallery, .caption-grid { grid-template-columns: 1fr; gap: 1.75rem; }
   .tile, .area-wide, .area-portrait { grid-column: auto; height: auto; min-height: 0; }
   .ig-grid { grid-template-columns: 1fr; }
   .footer-brand { align-items: flex-start; }
@@ -1244,8 +1244,9 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   margin-top: 0.75rem;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(1.45rem, 2vw, 2.1rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 .squad-role { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.85rem; }
 .squad-placeholder {
@@ -1267,20 +1268,22 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
 .staff-list { margin-top: 1.8rem; border-top: 1px solid var(--line); }
 .staff-row {
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: end;
-  padding: 1.15rem 0;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--line);
 }
-.staff-photo { width: 7.5rem; height: 9.4rem; object-fit: cover; object-position: center 12%; }
-.staff-mark { width: 2.5rem; height: 1px; background: var(--orange); margin-bottom: 0.4rem; }
+.staff-photo { width: 5.5rem; height: 6.8rem; object-fit: cover; object-position: center 12%; }
+.staff-mark { width: 2.5rem; height: 1px; background: var(--orange); }
 .staff-name {
+  margin: 0;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(1.7rem, 3vw, 2.6rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: uppercase;
 }
 
 .profile { padding-bottom: clamp(4rem, 10vh, 7rem); }
@@ -1547,4 +1550,126 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   .intro-story, .founder-row { grid-template-columns: 1fr; }
   .honour-list li { flex-direction: column; gap: 0.35rem; }
   .route-row a { flex-basis: 50%; border-bottom: 1px solid var(--line); }
+  .contact-list { grid-template-columns: 1fr; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.squad-bleed {
+  position: relative;
+  margin: calc((var(--header) + 2.75rem) * -1) 0 2rem;
+  height: 100svh;
+  background: var(--bg);
+}
+.squad-bleed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+.squad-bleed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background: #08090b;
+}
+.squad-bleed-title {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1rem, 3vw, 2.5rem);
+  right: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 14vw, 12rem);
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.squad-grid.wrap { margin-top: 0; }
+
+.staff-heading {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 12vw, 9rem);
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.staff-role {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.news-todo {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: none;
+}
+.news-section { padding-block: clamp(2.5rem, 7vh, 4.5rem); }
+
+.caption-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem 1rem;
+  margin: 0;
+  padding: 0 clamp(0.75rem, 2vw, 1.5rem) 3rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+.contact-list li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-list .contact-photo {
+  width: 5.5rem;
+  height: 6.8rem;
+  margin: 0;
+  object-fit: cover;
+}
+.contact-list a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+.contact-follow { margin-top: 1.5rem; }
+
+@media (max-width: 900px) {
+  .contact-list li { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .contact-list .staff-role,
+  .contact-list a { grid-column: 2; }
 }

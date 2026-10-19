@@ -43,11 +43,8 @@ export function MediaGallery({ level = "h2" }: { level?: "h1" | "h2" }) {
 
   return (
     <section className="media-section">
-      <div className="wrap">
-        <p className="kicker">Media</p>
-        <Title className="section-title">From the ground</Title>
-        <p className="media-support">Matchday, the kit, and the squad. Captions stay with the photograph.</p>
-        <div className="gallery">
+      <Title className="visually-hidden">Media</Title>
+      <div className="caption-grid">
           {media.map((item) => (
             <button
               key={item.id}
@@ -65,7 +62,6 @@ export function MediaGallery({ level = "h2" }: { level?: "h1" | "h2" }) {
             </button>
           ))}
         </div>
-      </div>
       <dialog
         ref={dialogRef}
         className="lightbox"

@@ -54,9 +54,8 @@ export function SupporterForm() {
   return (
     <section className="join">
       <div className="wrap" data-reveal>
-        <p className="kicker">Supporters</p>
-        <h2 className="section-title">Stay with the Federals</h2>
-        <p className="join-lead">Leave a name and email for club updates. Nothing else is collected.</p>
+        <h2 className="staff-heading">Supporters</h2>
+        <p className="join-lead">Leave a name and email for club updates.</p>
         <form className="join-form" onSubmit={onSubmit} noValidate>
           <label>
             Name

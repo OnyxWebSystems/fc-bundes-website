@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/Button";
 import { club, contacts } from "@/data/club";
 
 export function Contact({ level = "h1" }: { level?: "h1" | "h2" }) {
@@ -7,11 +6,11 @@ export function Contact({ level = "h1" }: { level?: "h1" | "h2" }) {
 
   return (
     <section className="contact-section">
-      <div className="wrap" data-reveal>
-        <Title className="section-title">Connect with FC Bundes</Title>
-        <div className="contacts">
+      <div className="wrap">
+        <Title className="visually-hidden">Contact</Title>
+        <ul className="contact-list">
           {contacts.map((person) => (
-            <article className="contact" key={person.tel}>
+            <li key={person.tel}>
               {person.image ? (
                 <Image
                   src={person.image}
@@ -20,20 +19,20 @@ export function Contact({ level = "h1" }: { level?: "h1" | "h2" }) {
                   height={person.height ?? 1280}
                   className="contact-photo"
                 />
-              ) : null}
-              <p className="kicker">{person.role}</p>
-              <h2>{person.name}</h2>
-              <a href={person.tel} data-cursor="open">
-                {person.phone}
-              </a>
-            </article>
+              ) : (
+                <span className="staff-mark" aria-hidden="true" />
+              )}
+              <p className="staff-name">{person.name}</p>
+              <p className="staff-role">{person.role}</p>
+              <a href={person.tel}>{person.phone}</a>
+            </li>
           ))}
-        </div>
-        <div className="contact-follow">
-          <Button href={club.instagram.url} external>
+        </ul>
+        <p className="contact-follow">
+          <a className="text-link" href={club.instagram.url} target="_blank" rel="noopener noreferrer">
             Follow the Federals
-          </Button>
-        </div>
+          </a>
+        </p>
       </div>
     </section>
   );
