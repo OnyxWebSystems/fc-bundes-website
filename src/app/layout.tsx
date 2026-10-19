@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Big_Shoulders_Display, Hanken_Grotesk } from "next/font/google";
+import { Big_Shoulders, Hanken_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
@@ -8,9 +8,9 @@ import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
-const display = Big_Shoulders_Display({
-  weight: ["800", "900"],
+const display = Big_Shoulders({
   subsets: ["latin"],
+  axes: ["opsz"],
   variable: "--font-display",
   display: "swap",
 });

@@ -74,6 +74,7 @@ main { flex: 1 0 auto; }
 .display {
   font-family: var(--font-display), system-ui, sans-serif;
   font-weight: 800;
+  font-variation-settings: "opsz" 72;
   letter-spacing: -0.02em;
   line-height: 0.88;
   text-transform: uppercase;
@@ -1126,6 +1127,7 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.88;
+  font-variation-settings: "opsz" 72;
 }
 .hero { min-height: 100svh; }
 .hero-title { font-size: clamp(4rem, 14vw, 14rem); font-weight: 900; }
@@ -1667,6 +1669,19 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   letter-spacing: 0.18em;
 }
 .contact-follow { margin-top: 1.5rem; }
+
+.intro-year,
+.honours-label,
+.honour-list li,
+.founder-row span,
+.staff-heading,
+.staff-name,
+.squad-bleed-title,
+.squad-name,
+.scoreboard-todo,
+.news-todo {
+  font-variation-settings: "opsz" 72;
+}
 
 @media (max-width: 900px) {
   .contact-list li { grid-template-columns: 5.5rem minmax(0, 1fr); }
