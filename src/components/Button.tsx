@@ -5,16 +5,19 @@ type ButtonProps = {
   children: React.ReactNode;
   external?: boolean;
   variant?: "line" | "ghost";
+  arrow?: boolean;
 };
 
-export function Button({ href, children, external = false, variant = "line" }: ButtonProps) {
+export function Button({ href, children, external = false, variant = "line", arrow = false }: ButtonProps) {
   const className = variant === "ghost" ? "btn btn-ghost" : "btn";
   const content = (
     <>
       <span>{children}</span>
-      <span className="btn-arrow" aria-hidden="true">
-        {external ? "↗" : "→"}
-      </span>
+      {arrow ? (
+        <span className="btn-arrow" aria-hidden="true">
+          →
+        </span>
+      ) : null}
     </>
   );
 

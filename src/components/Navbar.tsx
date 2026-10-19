@@ -67,7 +67,7 @@ export function Navbar() {
             ))}
           </nav>
           <a className="nav-follow" href={club.instagram.url} target="_blank" rel="noopener noreferrer" data-cursor="open">
-            Follow the Federals <span aria-hidden="true">↗</span>
+            Follow the Federals
           </a>
           <button
             type="button"
@@ -97,7 +97,7 @@ export function Navbar() {
           </Link>
         ))}
         <a className="menu-follow" href={club.instagram.url} target="_blank" rel="noopener noreferrer">
-          Follow the Federals ↗
+          Follow the Federals
         </a>
       </div>
     </>

@@ -29,7 +29,9 @@ export function Hero() {
           <span>Founded in Dagoretti. Still playing at Nairobi City Council Field.</span>
         </p>
         <div className="btn-row">
-          <Button href="/team">The squad</Button>
+          <Button href="/team" arrow>
+            The squad
+          </Button>
           <Button href="/matches" variant="ghost">
             Match centre
           </Button>

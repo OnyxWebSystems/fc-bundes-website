@@ -104,9 +104,9 @@ main { flex: 1 0 auto; }
   border: 1px solid var(--orange);
   color: var(--text);
   background: transparent;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   overflow: hidden;
   transition: color 0.35s var(--ease);
@@ -996,16 +996,16 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
 .footer-name {
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 0.88;
 }
 .footer-loc {
   margin-top: 0.45rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: var(--muted);
 }
 .footer-links {
@@ -1018,8 +1018,9 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
 }
 .footer-links a {
   position: relative;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 .footer-links a::after {
