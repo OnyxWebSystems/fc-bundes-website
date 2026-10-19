@@ -1,0 +1,68 @@
+import type { MediaItem } from "@/types";
+
+export const media: MediaItem[] = [
+  {
+    id: "squad",
+    src: "/media/squad.webp",
+    alt: "FC Bundes squad lined up at the ground",
+    category: "Matchday",
+    title: "The squad",
+    area: "wide",
+  },
+  {
+    id: "action",
+    src: "/media/action.webp",
+    alt: "FC Bundes player in the grey kit during a match",
+    category: "Matchday",
+    title: "In the match",
+    area: "standard",
+  },
+  {
+    id: "matchday",
+    src: "/media/matchday.webp",
+    alt: "FC Bundes goalkeeper and teammates at the ground",
+    category: "Matchday",
+    title: "At the ground",
+    area: "standard",
+  },
+  {
+    id: "lineup",
+    src: "/media/lineup.webp",
+    alt: "FC Bundes team photographed together on the pitch",
+    category: "Matchday",
+    title: "The Federals",
+    area: "wide",
+  },
+  {
+    id: "home-kit",
+    src: "/media/pic-12.webp",
+    alt: "Player wearing the FC Bundes black and orange home kit",
+    category: "Kit",
+    title: "Home kit",
+    area: "standard",
+  },
+  {
+    id: "crest-close",
+    src: "/media/pic-09.webp",
+    alt: "Close view of the FC Bundes crest on the home kit",
+    category: "Kit",
+    title: "The crest",
+    area: "standard",
+  },
+  {
+    id: "away-kit",
+    src: "/media/pic-11.webp",
+    alt: "FC Bundes away kit in cyan and black",
+    category: "Kit",
+    title: "Away kit",
+    area: "standard",
+  },
+  {
+    id: "the-kit",
+    src: "/media/pic-07.webp",
+    alt: "Three players wearing FC Bundes home and away kits",
+    category: "Kit",
+    title: "The kit",
+    area: "standard",
+  },
+];
