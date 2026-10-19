@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/Button";
 import { trophies } from "@/data/trophies";
 
 export function Trophies({ level = "h2" }: { level?: "h1" | "h2" }) {
@@ -7,26 +6,22 @@ export function Trophies({ level = "h2" }: { level?: "h1" | "h2" }) {
 
   return (
     <section className="honours-section">
-      <div className="wrap" data-reveal>
-        <div className="honours-head">
-          <p className="kicker">Honours</p>
-          <Title>What the Federals have won</Title>
-        </div>
-        <ol>
-          {trophies.map((trophy, index) => (
-            <li className="honour" key={trophy.id}>
-              <span className="honour-index">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{trophy.competition}</h3>
-              <p className="honour-place">{trophy.place}</p>
+      <div className="wrap">
+        <Title className="honours-label">Honours</Title>
+        <ul className="honour-list">
+          {trophies.map((trophy) => (
+            <li key={trophy.id}>
+              <span>{trophy.competition}</span>
+              <span className="honour-place">{trophy.place}</span>
             </li>
           ))}
-        </ol>
+        </ul>
         {level === "h2" ? (
-          <div className="btn-row honours-link">
-            <Button href="/trophies">Honours</Button>
-          </div>
+          <p className="honours-more">
+            <Link href="/trophies">Honours</Link>
+          </p>
         ) : (
-          <p className="empty-note">
+          <p className="honours-more">
             <Link href="/club">The club story</Link>
           </p>
         )}

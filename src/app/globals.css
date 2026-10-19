@@ -1367,5 +1367,184 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
   .is-lead .squad-photo { aspect-ratio: 3 / 4; height: auto; min-height: 0; }
   .fan-hero-photo { min-height: 62vw; order: -1; }
   .path-list em { grid-column: 2; }
-  .intro-year { font-size: 3.2rem; }
+  .intro-year { font-size: clamp(5rem, 22vw, 8rem); }
+  .intro-story, .founder-row { grid-template-columns: 1fr; }
+  .founder-row { grid-column: auto; }
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--orange);
+}
+
+.intro-story {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.55fr) minmax(0, 1.45fr);
+  gap: 1.25rem 2.5rem;
+  align-items: end;
+}
+.intro-year {
+  font-size: clamp(6rem, 14vw, 12rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.8;
+}
+.founder-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+}
+.founder-row .founder-photo {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  object-position: center 18%;
+}
+.founder-row span {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 0.9;
+}
+.founder-row small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.intro-line {
+  grid-column: 1 / -1;
+  max-width: 42rem;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.identity-band {
+  position: relative;
+  height: min(78vh, 880px);
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+.identity-band > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.honours-label {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 12vw, 9rem);
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.honour-list { margin: 0; }
+.honour-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  line-height: 0.88;
+}
+.honour-list li:last-child { border-bottom: 1px solid var(--line); }
+.honour-list .honour-place {
+  flex: none;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--orange);
+}
+.honours-more { margin: 1.25rem 0 0; }
+.honours-more a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--orange);
+}
+
+.ground-band { margin: 0; }
+.ground-band img {
+  width: 100%;
+  height: min(78vh, 920px);
+  object-fit: cover;
+  display: block;
+}
+.ground-band figcaption {
+  padding: 0.95rem clamp(1rem, 3vw, 2.5rem) 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.route-row {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.route-row a {
+  flex: 1 1 7.5rem;
+  padding: 1.35rem 0.8rem;
+  border-right: 1px solid var(--line);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.route-row a:last-child { border-right: 0; }
+.route-row a:hover { color: var(--orange); }
+
+.scoreboard {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(2.5rem, 8vh, 5.5rem) clamp(1rem, 4vw, 3rem);
+  background: var(--bg);
+}
+.scoreboard-todo {
+  margin: 0;
+  max-width: 16ch;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 6.4rem);
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  text-transform: none;
+}
+
+.instagram-handle a { border-bottom: 1px solid var(--orange); }
+
+@media (max-width: 900px) {
+  .intro-story, .founder-row { grid-template-columns: 1fr; }
+  .honour-list li { flex-direction: column; gap: 0.35rem; }
+  .route-row a { flex-basis: 50%; border-bottom: 1px solid var(--line); }
 }

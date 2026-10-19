@@ -1,19 +1,17 @@
 import Image from "next/image";
-import { Button } from "@/components/Button";
 import { club } from "@/data/club";
 import { instagramPosts } from "@/data/instagram";
 
-export function Instagram({ level = "h2" }: { level?: "h1" | "h2" }) {
-  const Title = level;
-
+export function Instagram() {
   return (
     <section className="instagram">
       <div className="wrap" data-reveal>
-        <Title className="section-title">Follow the Federals</Title>
-        <p className="instagram-handle">{club.instagram.display}</p>
-        <Button href={club.instagram.url} external>
-          View Instagram
-        </Button>
+        <h2 className="section-title">Follow the Federals</h2>
+        <p className="instagram-handle">
+          <a href={club.instagram.url} target="_blank" rel="noopener noreferrer">
+            {club.instagram.display}
+          </a>
+        </p>
         {instagramPosts.length > 0 ? (
           <div className="ig-grid">
             {instagramPosts.map((post) => (

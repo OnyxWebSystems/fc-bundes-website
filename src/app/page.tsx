@@ -7,7 +7,7 @@ import { Instagram } from "@/components/Instagram";
 import { Matchday } from "@/components/Matchday";
 import { SiteIndex } from "@/components/SiteIndex";
 import { Trophies } from "@/components/Trophies";
-import { kitCloseups, teamLineups } from "@/data/photos";
+import { kitCloseups } from "@/data/photos";
 
 export const metadata: Metadata = {
   description: "FC Bundes, The Federals. Established 2017 in Dagoretti, Nairobi, Kenya.",
@@ -27,7 +27,6 @@ export default function HomePage() {
       <HomeGround
         image="/media/squad.webp"
         imageAlt="FC Bundes squad lined up at the ground"
-        frames={teamLineups}
       />
       <Matchday />
       <SiteIndex />

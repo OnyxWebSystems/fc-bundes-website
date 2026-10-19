@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/Button";
 import { PhotoCycle } from "@/components/PhotoCycle";
 import { club } from "@/data/club";
@@ -13,28 +14,20 @@ export function Hero() {
       <div className="hero-shade" />
       <div className="hero-copy wrap">
         <Image className="hero-crest" src="/brand/crest.webp" alt="" width={72} height={82} priority />
-        <p className="kicker hero-line">
-          <span>FC Bundes · Est. {club.founded}</span>
+        <h1 className="hero-title">The Federals</h1>
+        <p className="hero-loc">
+          {club.area}, {club.city}
         </p>
-        <h1 className="hero-title hero-line">
-          <span>
-            The <em>Federals</em>
-          </span>
-        </h1>
-        <p className="hero-loc hero-line">
-          <span>{club.locationLabel}</span>
-        </p>
-        <span className="hero-rule" />
-        <p className="hero-statement hero-line">
-          <span>Founded in Dagoretti. Still playing at Nairobi City Council Field.</span>
+        <p className="hero-statement">
+          Founded in {club.founded}. {club.ground}.
         </p>
         <div className="btn-row">
           <Button href="/team" arrow>
             The squad
           </Button>
-          <Button href="/matches" variant="ghost">
+          <Link href="/matches" className="text-link">
             Match centre
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
