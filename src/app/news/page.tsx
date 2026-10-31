@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NewsList } from "@/components/NewsList";
+import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "News",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 export default function NewsPage() {
   return (
     <div className="page">
-      <NewsList level="h1" />
+      <PageHero index="05" kicker="Club news" title="News" line="Announcements from FC Bundes, The Federals." />
+      <NewsList />
     </div>
   );
 }

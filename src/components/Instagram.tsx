@@ -1,22 +1,26 @@
 import Image from "next/image";
+import { Button } from "@/components/Button";
 import { club } from "@/data/club";
 import { instagramPosts } from "@/data/instagram";
 
-export function Instagram() {
+export function Instagram({ index }: { index?: string }) {
   return (
-    <section className="instagram">
-      <div className="wrap" data-reveal>
-        <h2 className="section-title">Follow the Federals</h2>
-        <p className="instagram-handle">
-          <a href={club.instagram.url} target="_blank" rel="noopener noreferrer">
+    <section className="chapter instagram" id="instagram">
+      <div className="wrap">
+        <header className="chapter-head">
+          <div>
+            <p className="kicker">{index ? <span>{index}</span> : null}Instagram</p>
+            <h2 className="chapter-title">Follow the Federals</h2>
+          </div>
+          <Button href={club.instagram.url} external variant="ghost">
             {club.instagram.display}
-          </a>
-        </p>
+          </Button>
+        </header>
         {instagramPosts.length > 0 ? (
-          <div className="ig-grid">
+          <div className="ig-grid" data-stagger>
             {instagramPosts.map((post) => (
-              <a key={post.id} href={post.href} target="_blank" rel="noopener noreferrer" data-cursor="view">
-                <Image src={post.image} alt={post.alt} width={post.width} height={post.height} sizes="(max-width: 800px) 100vw, 30vw" />
+              <a key={post.id} className="ig-card" href={post.href} target="_blank" rel="noopener noreferrer">
+                <Image src={post.image} alt={post.alt} width={post.width} height={post.height} quality={90} />
               </a>
             ))}
           </div>

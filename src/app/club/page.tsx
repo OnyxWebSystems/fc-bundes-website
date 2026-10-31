@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { ClubIntro } from "@/components/ClubIntro";
+import { PageHero } from "@/components/PageHero";
 import { Staff } from "@/components/Staff";
 import { Timeline } from "@/components/Timeline";
+import { club } from "@/data/club";
 
 export const metadata: Metadata = {
   title: "Club",
@@ -11,9 +13,10 @@ export const metadata: Metadata = {
 export default function ClubPage() {
   return (
     <div className="page">
-      <Staff level="h1" />
-      <Timeline />
+      <PageHero index="01" kicker="The club" title="The Federals" line={club.locationLabel} />
       <ClubIntro />
+      <Staff />
+      <Timeline />
     </div>
   );
 }

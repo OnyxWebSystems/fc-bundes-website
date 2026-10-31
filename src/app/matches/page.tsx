@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Matchday } from "@/components/Matchday";
+import { PageHero } from "@/components/PageHero";
+import { club } from "@/data/club";
 
 export const metadata: Metadata = {
   title: "Matches",
@@ -9,7 +11,8 @@ export const metadata: Metadata = {
 export default function MatchesPage() {
   return (
     <div className="page">
-      <Matchday level="h1" />
+      <PageHero index="03" kicker="Fixtures" title="Matchday" line={club.ground} />
+      <Matchday showHeader={false} />
     </div>
   );
 }

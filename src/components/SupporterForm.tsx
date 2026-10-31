@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { ButtonArrow } from "@/components/Button";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -52,32 +53,46 @@ export function SupporterForm() {
   }
 
   return (
-    <section className="join">
-      <div className="wrap" data-reveal>
-        <h2 className="staff-heading">Supporters</h2>
-        <p className="join-lead">Leave a name and email for club updates.</p>
-        <form className="join-form" onSubmit={onSubmit} noValidate>
-          <label>
-            Name
-            <input name="name" type="text" autoComplete="name" maxLength={80} aria-invalid={errors.name ? true : undefined} aria-describedby={errors.name ? "name-error" : undefined} />
-            {errors.name ? <span id="name-error" className="field-error">{errors.name}</span> : null}
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" autoComplete="email" maxLength={120} aria-invalid={errors.email ? true : undefined} aria-describedby={errors.email ? "email-error" : undefined} />
-            {errors.email ? <span id="email-error" className="field-error">{errors.email}</span> : null}
-          </label>
-          <label className="hp" aria-hidden="true">
-            Website
-            <input name="website" type="text" tabIndex={-1} autoComplete="off" />
-          </label>
-          <button className="btn" type="submit" disabled={status === "submitting"}>
-            <span>{status === "submitting" ? "Sending" : "Join the list"}</span>
-          </button>
-          <p className={`form-status is-${status}`} role="status" aria-live="polite">
-            {message}
-          </p>
-        </form>
+    <section className="chapter join" id="supporters">
+      <div className="wrap">
+        <div className="join-grid">
+          <div>
+            <p className="kicker">The list</p>
+            <h2 className="panel-title">Supporters</h2>
+            <p className="join-lead">Leave a name and email for club updates.</p>
+          </div>
+          <form className="join-form" onSubmit={onSubmit} noValidate>
+            <label>
+              Name
+              <input name="name" type="text" autoComplete="name" maxLength={80} aria-invalid={errors.name ? true : undefined} aria-describedby={errors.name ? "name-error" : undefined} />
+              {errors.name ? (
+                <span id="name-error" className="field-error">
+                  {errors.name}
+                </span>
+              ) : null}
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autoComplete="email" maxLength={120} aria-invalid={errors.email ? true : undefined} aria-describedby={errors.email ? "email-error" : undefined} />
+              {errors.email ? (
+                <span id="email-error" className="field-error">
+                  {errors.email}
+                </span>
+              ) : null}
+            </label>
+            <label className="hp" aria-hidden="true">
+              Website
+              <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </label>
+            <button className="btn" type="submit" disabled={status === "submitting"}>
+              <span>{status === "submitting" ? "Sending" : "Join the list"}</span>
+              <ButtonArrow />
+            </button>
+            <p className={`form-status is-${status}`} role="status" aria-live="polite">
+              {message}
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   );

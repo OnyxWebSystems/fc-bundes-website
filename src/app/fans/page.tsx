@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Matchday } from "@/components/Matchday";
 import { MediaGallery } from "@/components/MediaGallery";
 import { NewsList } from "@/components/NewsList";
+import { PageHero } from "@/components/PageHero";
 import { SupporterForm } from "@/components/SupporterForm";
 
 export const metadata: Metadata = {
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function FansPage() {
   return (
     <div className="page">
-      <Matchday level="h1" />
-      <NewsList />
-      <MediaGallery />
+      <PageHero index="04" kicker="Supporters" title="Fan zone" line="Join the list for club updates." />
       <SupporterForm />
+      <NewsList preview />
+      <MediaGallery preview />
     </div>
   );
 }

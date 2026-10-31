@@ -1,11 +1,12 @@
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 
 export default function NotFound() {
   return (
-    <div className="page not-found">
-      <div className="wrap">
-        <h1 className="section-title">Page not found</h1>
-        <div className="btn-row" style={{ marginTop: "1.5rem" }}>
+    <div className="page">
+      <PageHero index="00" kicker="Missing page" title="Page not found" line="This address is not part of FC Bundes." />
+      <div className="chapter">
+        <div className="wrap">
           <Button href="/">Home</Button>
         </div>
       </div>

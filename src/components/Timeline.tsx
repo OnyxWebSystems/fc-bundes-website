@@ -60,8 +60,15 @@ export function Timeline() {
   }, []);
 
   return (
-    <section className="timeline" ref={root}>
-      <div className="wrap timeline-track">
+    <section className="chapter timeline" ref={root}>
+      <div className="wrap">
+        <header className="chapter-head">
+          <div>
+            <p className="kicker">History</p>
+            <h2 className="chapter-title">Since 2017</h2>
+          </div>
+        </header>
+        <div className="timeline-track">
         <div className="timeline-line" aria-hidden="true">
           <div className="timeline-line-progress" />
         </div>
@@ -74,6 +81,7 @@ export function Timeline() {
             <p>{item.body}</p>
           </article>
         ))}
+        </div>
       </div>
     </section>
   );

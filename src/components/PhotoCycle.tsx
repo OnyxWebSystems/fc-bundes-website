@@ -69,8 +69,9 @@ export function PhotoCycle({ frames, sizes, priority = false, interval = 5600 }:
               alt={current ? frame.alt : ""}
               fill
               priority={priority && i === 0}
+              quality={90}
               sizes={sizes}
-              style={{ objectPosition: frame.position ?? "center center" }}
+              style={{ objectFit: "cover", objectPosition: "center center" }}
               aria-hidden={current ? undefined : true}
             />
           </span>

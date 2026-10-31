@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
 import { Trophies } from "@/components/Trophies";
 
 export const metadata: Metadata = {
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 export default function TrophiesPage() {
   return (
     <div className="page">
-      <Trophies level="h1" />
+      <PageHero index="08" kicker="The club" title="Honours" line="Recorded finishes for The Federals." />
+      <Trophies page />
     </div>
   );
 }

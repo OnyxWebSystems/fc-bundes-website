@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Big_Shoulders, Hanken_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/Footer";
-import { LoadingScreen } from "@/components/LoadingScreen";
 import { Motion } from "@/components/Motion";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
@@ -31,16 +30,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08090B",
+  themeColor: "#070708",
   width: "device-width",
   initialScale: 1,
 };
 
 const introScript = `
 try {
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var seen = sessionStorage.getItem("fcb-intro") === "1";
-  if (reduce || seen) document.documentElement.classList.add("intro-done");
   document.documentElement.classList.add("js");
 } catch (e) {}
 `;
@@ -81,7 +77,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <LoadingScreen />
         <Navbar />
         <PageTransition />
         <Motion />

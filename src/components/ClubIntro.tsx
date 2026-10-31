@@ -1,31 +1,31 @@
-import Image from "next/image";
+import { ImageFrame } from "@/components/ImageFrame";
 import { club, foundingLine } from "@/data/club";
 
-export function ClubIntro({ as = "h2" }: { as?: "h1" | "h2" }) {
-  const Title = as;
-
+export function ClubIntro({ index }: { index?: string }) {
   return (
-    <section className="intro">
-      <div className="wrap intro-story">
-        <Title className="intro-year">{club.founded}</Title>
-        <ul className="founder-row">
+    <section className="chapter" id="founding">
+      <div className="wrap founding">
+        <div className="founding-copy" data-reveal>
+          <p className="kicker">{index ? <span>{index}</span> : null}Founding</p>
+          <h2 className="founding-year">{club.founded}</h2>
+          <p className="founding-line">{foundingLine}</p>
+        </div>
+        <ul className="founder-grid" data-stagger>
           {club.founders.map((founder) => (
             <li key={founder.name}>
               {founder.image ? (
-                <Image
+                <ImageFrame
                   src={founder.image}
-                  alt={founder.imageAlt ?? ""}
-                  width={founder.width}
-                  height={founder.height}
-                  className="founder-photo"
+                  alt={founder.imageAlt ?? founder.name}
+                  title={founder.name}
+                  position="center center"
+                  sizes="(max-width: 800px) 86vw, 32vw"
+                  clip={false}
                 />
               ) : null}
-              <span>{founder.name}</span>
-              <small>Founder</small>
             </li>
           ))}
         </ul>
-        <p className="intro-line">{foundingLine}</p>
       </div>
     </section>
   );

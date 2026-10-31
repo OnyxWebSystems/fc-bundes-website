@@ -16,8 +16,8 @@ export function PageTransition() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     setPhase("cover");
-    const revealTimer = window.setTimeout(() => setPhase("reveal"), 300);
-    const idleTimer = window.setTimeout(() => setPhase("idle"), 660);
+    const revealTimer = window.setTimeout(() => setPhase("reveal"), 320);
+    const idleTimer = window.setTimeout(() => setPhase("idle"), 760);
     return () => {
       window.clearTimeout(revealTimer);
       window.clearTimeout(idleTimer);
@@ -25,6 +25,9 @@ export function PageTransition() {
   }, [pathname]);
 
   return (
-    <div className={`overlay${phase === "idle" ? "" : ` is-${phase}`}`} aria-hidden="true" />
+    <div className={`overlay${phase === "idle" ? "" : ` is-${phase}`}`} aria-hidden="true">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/brand/crest.webp" alt="" />
+    </div>
   );
 }

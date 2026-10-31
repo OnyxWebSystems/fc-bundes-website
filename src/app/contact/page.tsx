@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Contact } from "@/components/Contact";
+import { PageHero } from "@/components/PageHero";
+import { club } from "@/data/club";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="page">
+      <PageHero index="07" kicker="The club" title="Contact" line={club.locationLabel} />
       <Contact />
     </div>
   );
