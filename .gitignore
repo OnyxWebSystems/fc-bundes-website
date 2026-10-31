@@ -5,3 +5,12 @@ out
 *.log
 next-env.d.ts
 .vercel
+
+.env
+.env.*
+!.env.example
+
+tsconfig.tsbuildinfo
+
+# Source scans. The site serves the processed images in public/.
+*.pdf

@@ -1651,17 +1651,18 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
 }
 .contact-list li {
   display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr) auto auto;
+  grid-template-columns: 11rem minmax(0, 1fr) auto auto;
   gap: 1rem 1.5rem;
   align-items: center;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
 }
 .contact-list .contact-photo {
-  width: 5.5rem;
-  height: 6.8rem;
+  width: 11rem;
+  height: 14.5rem;
   margin: 0;
   object-fit: cover;
+  object-position: center 8%;
 }
 .contact-list a {
   font-size: 0.75rem;
@@ -1684,7 +1685,8 @@ html.intro-done .hero-rule { animation-delay: 0.2s; }
 }
 
 @media (max-width: 900px) {
-  .contact-list li { grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .contact-list li { grid-template-columns: 8.5rem minmax(0, 1fr); }
+  .contact-list .contact-photo { width: 8.5rem; height: 11rem; }
   .contact-list .staff-role,
   .contact-list a { grid-column: 2; }
 }
