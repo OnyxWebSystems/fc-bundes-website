@@ -21,6 +21,13 @@ export const club = {
       width: 853,
       height: 1280,
     },
+    {
+      name: "Stephen Wandera",
+      image: "/people/stephen-wandera.webp",
+      imageAlt: "Stephen Wandera, founder of FC Bundes",
+      width: 960,
+      height: 1280,
+    },
   ],
   statement: "Built in Dagoretti. Driven by the Federals.",
   locationLabel: "Dagoretti · Nairobi · Kenya",
@@ -74,9 +81,9 @@ export const milestones: Milestone[] = [
   {
     year: "2017",
     title: "The Beginning",
-    body: "Founded by Bill Okumu and Hilary Odhiambo.",
+    body: "Founded by Bill Okumu, Hilary Odhiambo, and Stephen Wandera.",
   },
 ];
 
 export const foundingLine =
-  "FC Bundes was founded in 2017 by Bill Okumu and Hilary Odhiambo.";
+  "FC Bundes was founded in 2017 by Bill Okumu, Hilary Odhiambo, and Stephen Wandera.";

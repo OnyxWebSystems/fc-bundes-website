@@ -7,7 +7,7 @@ import { club } from "@/data/club";
 
 export const metadata: Metadata = {
   title: "Club",
-  description: "FC Bundes was founded in 2017 by Bill Okumu and Hilary Odhiambo in Dagoretti, Nairobi.",
+  description: "FC Bundes was founded in 2017 by Bill Okumu, Hilary Odhiambo, and Stephen Wandera in Dagoretti, Nairobi.",
 };
 
 export default function ClubPage() {
