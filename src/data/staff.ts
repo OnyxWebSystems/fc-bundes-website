@@ -6,6 +6,6 @@ export const staff: StaffMember[] = [
   { id: "godfrey-murugi", name: "Godfrey Murugi", role: "Assistant Coach", image: null },
   { id: "lavenda-akello", name: "Lavenda Akello", role: "Team Manager", image: "/people/lavenda-akello.webp" },
   { id: "boneface-otieno", name: "Boneface Otieno", role: "Media", nickname: "Stan", image: "/people/boneface-otieno.webp" },
-  { id: "joseph-njenga", name: "Joseph Njenga", role: "Media", image: null },
+  { id: "joseph-njenga", name: "Joseph Njenga", role: "Media", image: "/people/joseph-njenga.webp" },
   { id: "rodney-stallon", name: "Rodney Stallon", role: "Team Doctor", image: "/people/rodney-stallon.webp" },
 ];
