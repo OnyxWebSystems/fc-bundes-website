@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MediaGallery } from "@/components/MediaGallery";
+import { FanGallery } from "@/components/FanGallery";
 import { NewsList } from "@/components/NewsList";
 import { PageHero } from "@/components/PageHero";
 import { SupporterForm } from "@/components/SupporterForm";
@@ -15,7 +15,7 @@ export default function FansPage() {
       <PageHero index="04" kicker="Supporters" title="Fan zone" line="Join the list for club updates." />
       <SupporterForm />
       <NewsList preview />
-      <MediaGallery preview />
+      <FanGallery />
     </div>
   );
 }

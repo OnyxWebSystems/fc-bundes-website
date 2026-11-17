@@ -918,6 +918,55 @@ h1, h2, .display {
 .lightbox-controls button:hover { color: var(--orange); border-bottom-color: var(--orange); }
 .lightbox-controls button:disabled { opacity: 0.35; }
 
+/* Fan zone mosaic */
+.fan-mosaic {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem 1.1rem;
+  align-items: start;
+}
+.fan-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 0;
+  text-align: left;
+  color: inherit;
+}
+.fan-frame {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--surface);
+}
+.fan-frame img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 720px) {
+  .fan-mosaic { grid-template-columns: 1fr 1fr; }
+  .fan-tile.is-wide,
+  .fan-tile.is-full { grid-column: 1 / -1; }
+}
+@media (min-width: 1100px) {
+  .fan-mosaic { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .fan-tile { grid-column: span 4; }
+  .fan-tile.is-wide { grid-column: span 8; }
+  .fan-tile.is-tall { grid-column: span 4; }
+  .fan-tile.is-full { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fan-frame img { transition: transform 0.65s var(--ease); }
+  .fan-tile:hover .fan-frame img,
+  .fan-tile:focus-visible .fan-frame img { transform: scale(1.035); }
+  .fan-lightbox,
+  .fan-lightbox::backdrop { animation: fan-rise 0.38s var(--ease); }
+}
+@keyframes fan-rise {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Instagram */
 .ig-grid {
   display: grid;
